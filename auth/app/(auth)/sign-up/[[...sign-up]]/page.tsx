@@ -45,10 +45,10 @@ export default function Home() {
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     if (isSignIn) {
       console.log(data);
-      router.push('/onboarding');
+      router.push('/dashboard');
     } else {
       alert(data);
-      router.push('/dasboard');
+      router.push('/onboarding');
     }
   };
 
