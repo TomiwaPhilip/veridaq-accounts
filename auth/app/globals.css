@@ -30,39 +30,44 @@ html {
   overflow: hidden; /* Ensure the SVG stays at the bottom-right corner */
 }
 
-@layer utilities {
-  .gradient-border {
-    border: 1.5px solid transparent; /* Set a default border */
-    border-image-slice: 1;
-    border-width: 1px;
-    border-image-source: linear-gradient(
-      180deg,
-      #6b4b9f 0%,
-      #e60b8e 50%
-    ); /* Define your gradient */
-    border-image-repeat: stretch;
-  }
+.border-gradient {
+  border: 2px solid transparent; /* Set default border */
+  border-image-slice: 1;
+  border-width: 3px;
+  border-image-source: linear-gradient(
+    to right,
+    #ff7e5f,
+    #feb47b
+  ); /* Define gradient */
+  border-radius: 2rem; /* Apply rounded corners */
 }
 
 .primary-color-100 {
-  color: #c3b8d8;
+  background-color: #c3b8d8;
+  color: #38313a;
 }
 
 .gradient {
   background: linear-gradient(90deg, #6b4b9f 0%, #e60b8e 50%);
 }
 
-.container {
+.gradient-input-wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
 }
 
-.blurred-circle {
+.gradient-input-wrapper input {
+  border: none;
+  background-color: transparent;
+  padding: 10px; /* adjust as needed */
+  border-radius: 5px; /* adjust as needed */
+}
+
+.gradient-input-wrapper::after {
+  content: "";
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 150px; /* Adjust size as needed */
-  height: 150px; /* Adjust size as needed */
-  pointer-events: none; /* Ensure the SVG doesn't interfere with mouse events */
+  inset: 0;
+  background-image: linear-gradient(to right, #f0a500, #f7d000);
+  mask: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  border-radius: 5px; /* adjust as needed */
 }

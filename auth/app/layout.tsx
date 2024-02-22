@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+
 import "./globals.css";
+import Rightsvgs from "@/components/blurSvgs/Rightsvg";
 
 export const metadata: Metadata = {
   title: "Auth",
@@ -15,16 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bgcolor">
         {children}
-        <div className="container">
-          <div className="blurred-circle">
-            <img
-              src="/assets/images/blur.svg"
-              alt="blur"
-              width={300}
-              height={300}
-            />
-          </div>
-        </div>
+        <Rightsvgs />
       </body>
     </html>
   );

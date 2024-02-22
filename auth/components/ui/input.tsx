@@ -11,7 +11,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         type={type}
         className={cn(
-          "flex h-10 w-full gradient-border primary-color-100 px-[3.8rem] py-3 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:ring-offset-gray-950 dark:placeholder:text-gray-400 dark:focus-visible:ring-gray-300",
+          "flex h-10 w-full  px-1 py-3 primary-color-100 text-sm ring-offset-white placeholder:text-gray-500 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          "primary-color", // Apply background color
+          "rounded-md border-4 border-gradient-to-r from-red-500 to-orange-500", // Apply gradient border and rounded corners
+          "dark:bg-gray-950 dark:ring-offset-gray-950 dark:placeholder:text-gray-400 dark:focus-visible:ring-gray-300",
           className,
         )}
         ref={ref}

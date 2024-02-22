@@ -1,30 +1,21 @@
 "use client"
 
 import { GoogleButton, MicrosoftButton } from "@/components/buttons/social";
-import { Button } from "@/components/ui/button"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import Button from "@/components/buttons/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 const onSubmit = (data: z.infer<typeof formSchema>) => {
-  console.log(data)
-}
+  console.log(data);
+};
 
 const passwordSchema = z
   .string()
   .min(7, { message: "Password must be at least 7 characters." })
   .refine((password) => {
-    // Check if the password contains at least one uppercase letter, one lowercase letter, and one digit
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
     const hasDigit = /\d/.test(password);
@@ -48,21 +39,17 @@ export default function Home() {
       email: "",
       password: "",
     },
-  })
+  });
 
   return (
     <main className="text-white">
       <div className="pt-5 pb-5">
-        <p className="text-center text-[24px] font-bold"> Sign in to continue to Veridaq.com </p>
-        <div className="flex flex-col justify-center items-center pt-[4rem]">
-          <div className="flex flex-col justify-center items-center">
-            <GoogleButton />
-            <br />
-            <MicrosoftButton />
-            <br />
-            <hr className="w-[50%]" />
-        </div>
-        <div className="pt-5">
+        <p className="text-center text-2xl font-bold">Sign in to continue to Veridaq.com</p>
+        <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+          <GoogleButton />
+          <br />
+          <MicrosoftButton />
+          <hr className="my-8" />
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
@@ -70,7 +57,7 @@ export default function Home() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="font-medium text-[20px]">Email Address</FormLabel>
+                    <FormLabel>Email Address</FormLabel>
                     <FormControl>
                       <Input placeholder="example@mail.com" {...field} />
                     </FormControl>
@@ -81,22 +68,23 @@ export default function Home() {
 
               <FormField
                 control={form.control}
-                name="email"
+                name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="font-medium text-[20px]">Password</FormLabel>
+                    <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="EXample123" {...field} />
+                      <Input placeholder="EXAMple123" type="password" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+              <div className="text-center">
+                <Button type="submit" name="Sign In" />
+              </div>
             </form>
-        </Form>
-      </div>
-      </div>
+          </Form>
+        </div>
       </div>
     </main>
   );
