@@ -27,7 +27,7 @@ body,
 html {
   height: 100%;
   margin: 0;
-  overflow: hidden; /* Ensure the SVG stays at the bottom-right corner */
+  overflow-x: hidden; /* Ensure the SVG stays at the bottom-right corner */
 }
 
 .border-gradient {

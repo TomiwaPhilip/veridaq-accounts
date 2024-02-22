@@ -11,7 +11,7 @@ export function GoogleButton() {
   );
 }
 
-export function MicrosoftButton() {
+export function LinkedinButton() {
   return (
     <button className="bg-[#D0CBDC] flex items-center justify-center py-3 px-8 w-full rounded-lg">
       <img src="/assets/icons/microsoft.svg" className="w-8 h-8 mr-2" />
@@ -19,7 +19,7 @@ export function MicrosoftButton() {
         href="/api/auth/microsoft"
         className="font-semibold text-black text-[18px]"
       >
-        Sign in with Microsoft
+        Sign in with LinkedIn
       </Link>
     </button>
   );

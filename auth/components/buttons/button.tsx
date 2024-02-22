@@ -10,7 +10,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className="gradient text-white w-[250px] h-[70px] rounded-md"
+      className="gradient text-white font-medium text-[20px] w-[200px] h-[70px] rounded-md"
     >
       {name}
     </button>

@@ -3,8 +3,8 @@ import React from "react";
 export default function Rightsvgs() {
   return (
     <svg
-      width="500"
-      height="500"
+      width="700"
+      height="700"
       viewBox="0 0 473 464"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -12,8 +12,8 @@ export default function Rightsvgs() {
         position: "absolute",
         bottom: 0,
         right: 0,
-        width: "150px",
-        height: "150px",
+        width: "500px",
+        height: "500px",
         pointerEvents: "none",
       }}
     >
